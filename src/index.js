@@ -1,7 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelector('form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    console.log(e.create-task-form);
-  })
+  const taskInput = document.getElementById("taskInput");
+  const addTaskBtn = document.getElementById("addTaskBtn");
+  const tasksList = document.getElementById("tasks");
+
+  addTaskBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    const taskText = taskInput.value.trim();
+
+    if (taskText !== "") {
+      const taskItem = document.createElement("li");
+      taskItem.textContent = taskText;
+
+      tasksList.appendChild(taskItem);
+
+      taskInput.value = "";
+    }
+  });
+
   // your code here
 });
