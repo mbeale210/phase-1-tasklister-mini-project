@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const taskInput = document.getElementById("taskInput");
-  const addTaskBtn = document.getElementById("addTaskBtn");
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("create-task-form");
+  const taskInput = document.getElementById("new-task-description");
   const tasksList = document.getElementById("tasks");
 
-  addTaskBtn.addEventListener("click", function (event) {
+  form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const taskText = taskInput.value.trim();
